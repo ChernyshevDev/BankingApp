@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    tools:ignore="IncludeLayoutParam">
+
+    <LinearLayout
+        android:id="@+id/textFieldsLinear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/first"
+            style="@style/PinField"
+            layout="@layout/item_pin" />
+
+        <include
+            android:id="@+id/second"
+            style="@style/PinField"
+            layout="@layout/item_pin"
+            android:layout_marginStart="@dimen/unit_4" />
+
+        <include
+            android:id="@+id/third"
+            style="@style/PinField"
+            layout="@layout/item_pin"
+            android:layout_marginStart="@dimen/unit_4" />
+
+        <include
+            android:id="@+id/forth"
+            style="@style/PinField"
+            layout="@layout/item_pin"
+            android:layout_marginStart="@dimen/unit_4" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/invisibleEditText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0"
+        android:cursorVisible="false"
+        android:inputType="number"
+        android:maxLength="4"
+        app:layout_constraintBottom_toBottomOf="@id/textFieldsLinear"
+        app:layout_constraintEnd_toEndOf="@id/textFieldsLinear"
+        app:layout_constraintStart_toStartOf="@id/textFieldsLinear"
+        app:layout_constraintTop_toTopOf="@id/textFieldsLinear" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

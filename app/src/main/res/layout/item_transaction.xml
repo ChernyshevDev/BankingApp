@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/unit_1"
+    android:background="@drawable/bg_transaction_credit">
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/unit_4"
+        android:layout_marginTop="@dimen/unit_4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/amount_eur" />
+
+    <TextView
+        android:id="@+id/counterPartyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/unit_2"
+        app:layout_constraintStart_toStartOf="@id/amount"
+        app:layout_constraintTop_toBottomOf="@id/amount"
+        tools:text="Jennie Sandoval" />
+
+    <TextView
+        android:id="@+id/counterPartyAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/unit_2"
+        app:layout_constraintStart_toStartOf="@id/counterPartyName"
+        app:layout_constraintTop_toBottomOf="@id/counterPartyName"
+        tools:text="LT185937542255629759" />
+
+    <TextView
+        android:id="@+id/transactionId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/unit_2"
+        app:layout_constraintStart_toStartOf="@id/counterPartyAccount"
+        app:layout_constraintTop_toBottomOf="@id/counterPartyAccount"
+        tools:text="f98b5dc7-dc72-45a5-a49c-1a81473798e3" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/unit_2"
+        android:layout_marginBottom="@dimen/unit_4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/transactionId"
+        app:layout_constraintTop_toBottomOf="@id/transactionId"
+        tools:text="Power Generation" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/unit_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/amount"
+        tools:text="2020-05-03" />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/unit_2"
+        app:layout_constraintEnd_toEndOf="@id/date"
+        app:layout_constraintTop_toBottomOf="@id/date"
+        tools:text="debit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

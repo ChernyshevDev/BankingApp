@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.chernyshev.bankingapp.presentation.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/navigate_to_landing"
+            app:destination="@id/landingFragment"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/landingFragment"
+        android:name="com.chernyshev.bankingapp.presentation.landing.LandingFragment"
+        android:label="LandingFragment"
+        tools:layout="@layout/fragment_landing" />
+
+    <action
+        android:id="@+id/action_global_pin_fragment"
+        app:destination="@id/pinFragment"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/fade_in"
+        app:popExitAnim="@anim/slide_to_right" />
+
+    <fragment
+        android:id="@+id/pinFragment"
+        android:name="com.chernyshev.bankingapp.presentation.pin.PinFragment"
+        android:label="PinFragment"
+        tools:layout="@layout/fragment_pin">
+        <argument
+            android:name="isCreatePin"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/navigate_to_landing"
+            app:destination="@id/landingFragment"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_to_right"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/navigate_to_transactions"
+            app:destination="@id/transactionsFragment"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_to_right"
+            app:popUpTo="@id/landingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/transactionsFragment"
+        android:name="com.chernyshev.bankingapp.presentation.transactions.TransactionsFragment"
+        android:label="TransactionsFragment"
+        tools:layout="@layout/fragment_transactions" />
+
+</navigation>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BankingApp</string>
+
+    <string name="not_implemented">Feature not implemented yet!</string>
+    <string name="transactions">Transactions</string>
+    <string name="your_balance">Your balance:</string>
+    <string name="amount_eur">EUR %s</string>
+    <string name="unknown_error">Unknown error</string>
+
+    <string name="enter_pin">Enter Pin</string>
+    <string name="create_pin">Create Pin</string>
+    <string name="confirm_pin">Confirm Pin</string>
+    <string name="incorrect_pin">Incorrect Pin!</string>
+    <string name="pins_are_different">Pins are different!</string>
+    <string name="debit_balance">Debit:</string>
+    <string name="credit_balance">Credit:</string>
+    <string name="transactions_sum">Transactions sum: %s EUR</string>
+</resources>
