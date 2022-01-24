@@ -3,12 +3,11 @@ package com.chernyshev.bankingapp.presentation.landing
 import com.chernyshev.bankingapp.base.BaseCommand
 import com.chernyshev.bankingapp.base.BaseEvent
 import com.chernyshev.bankingapp.base.BaseViewState
-import com.chernyshev.bankingapp.domain.usecase.Balances
+import com.chernyshev.bankingapp.domain.entity.Balances
 
 data class ViewState(
     val command: Command? = null,
-    val isLoadingBalance: Boolean = false,
-    val balance: Double? = null
+    val isLoadingBalance: Boolean = false
 ) : BaseViewState
 
 sealed class Event : BaseEvent {

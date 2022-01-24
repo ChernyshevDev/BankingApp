@@ -25,10 +25,18 @@ class PinFragment : BaseFragment(R.layout.fragment_pin) {
         viewModel.sendEvent(Event.ReceivedArgs(args))
     }
 
-    override fun initViews(): Unit = with(binding) {
+    override fun initViews() = with(binding) {
         pinCodeView.onPinEntered {
             viewModel.sendEvent(Event.EnteredPin(it))
         }
+    }
+
+    override fun onResume() = with(binding) {
+        super.onResume()
+        pinCodeView.requestKeyboard()
+    }
+
+    override fun initClickListeners() = with(binding) {
         toolbar.onBackClicked {
             requireActivity().onBackPressed()
         }
@@ -66,8 +74,4 @@ class PinFragment : BaseFragment(R.layout.fragment_pin) {
         showToast(errorType.errorMessageId)
     }
 
-    override fun onResume() = with(binding) {
-        super.onResume()
-        pinCodeView.requestKeyboard()
-    }
 }

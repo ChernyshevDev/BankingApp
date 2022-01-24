@@ -24,11 +24,6 @@ class TransactionsFragment : BaseFragment(R.layout.fragment_transactions) {
         viewModel.sendEvent(Event.PageOpened)
     }
 
-    override fun initViews() = with(binding) {
-        toolbar.onBackClicked { requireActivity().onBackPressed() }
-        transactionsRecycler.adapter = transactionsAdapter
-    }
-
     override fun initObservers() {
         viewModel.subscribeToCommand(viewLifecycleOwner) { command ->
             when (command) {
@@ -45,6 +40,14 @@ class TransactionsFragment : BaseFragment(R.layout.fragment_transactions) {
         viewModel.subscribeToStateUpdates(viewLifecycleOwner) { state ->
             displayLoading(state.isLoading)
         }
+    }
+
+    override fun initViews() = with(binding) {
+        transactionsRecycler.adapter = transactionsAdapter
+    }
+
+    override fun initClickListeners() = with(binding) {
+        toolbar.onBackClicked { requireActivity().onBackPressed() }
     }
 
     private fun displayLoading(isLoading: Boolean) = with(binding) {

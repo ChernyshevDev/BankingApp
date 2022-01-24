@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
-import com.chernyshev.bankingapp.data.TransactionsUseCaseImpl
+import com.chernyshev.bankingapp.data.usecase.TransactionsUseCaseImpl
 import com.chernyshev.bankingapp.data.repository.PinRepositoryImpl
 import com.chernyshev.bankingapp.data.repository.UserRepositoryImpl
 import com.chernyshev.bankingapp.data.usecase.UserBalanceUseCaseImpl

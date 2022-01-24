@@ -9,9 +9,7 @@ import com.chernyshev.bankingapp.base.BaseViewState
 data class ViewState(
     val command: Command? = null,
     val currentStep: PageStep? = null,
-    val isCreatePin: Boolean = false,
-    val pin: String = "",
-    val confirmPin: String = ""
+    val pin: String = ""
 ) : BaseViewState
 
 sealed class Event : BaseEvent {

@@ -26,7 +26,7 @@
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         tools:text="@string/enter_pin" />
 
-    <com.chernyshev.bankingapp.presentation.views.PinCodeFieldView
+    <com.chernyshev.bankingapp.presentation.views.PinInputView
         android:id="@+id/pinCodeView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

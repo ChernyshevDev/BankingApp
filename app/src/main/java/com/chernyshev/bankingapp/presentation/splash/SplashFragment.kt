@@ -13,6 +13,7 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class SplashFragment : BaseFragment(R.layout.fragment_splash) {
+
     private val viewModel by viewModels<SplashViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

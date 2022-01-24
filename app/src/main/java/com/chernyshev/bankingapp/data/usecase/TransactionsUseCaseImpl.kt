@@ -1,4 +1,4 @@
-package com.chernyshev.bankingapp.data
+package com.chernyshev.bankingapp.data.usecase
 
 import com.chernyshev.bankingapp.base.OperationResult
 import com.chernyshev.bankingapp.domain.entity.Transaction

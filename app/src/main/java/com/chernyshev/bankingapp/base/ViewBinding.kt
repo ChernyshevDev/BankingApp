@@ -9,7 +9,8 @@ import androidx.viewbinding.ViewBinding
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
-inline fun <reified T : ViewBinding> Fragment.viewBinding() = FragmentViewBindingDelegate(T::class.java, this)
+inline fun <reified T : ViewBinding> Fragment.viewBinding() =
+    FragmentViewBindingDelegate(T::class.java, this)
 
 class FragmentViewBindingDelegate<T : ViewBinding>(
     bindingClass: Class<T>,

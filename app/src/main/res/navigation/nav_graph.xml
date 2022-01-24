@@ -16,7 +16,8 @@
             app:enterAnim="@anim/slide_from_right"
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
-            app:popExitAnim="@anim/slide_to_right" />
+            app:popExitAnim="@anim/slide_to_right"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -31,7 +32,8 @@
         app:enterAnim="@anim/slide_from_right"
         app:exitAnim="@anim/fade_out"
         app:popEnterAnim="@anim/fade_in"
-        app:popExitAnim="@anim/slide_to_right" />
+        app:popExitAnim="@anim/slide_to_right"
+        app:popUpToInclusive="true" />
 
     <fragment
         android:id="@+id/pinFragment"

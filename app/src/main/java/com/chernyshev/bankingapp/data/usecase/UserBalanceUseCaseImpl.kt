@@ -1,7 +1,7 @@
 package com.chernyshev.bankingapp.data.usecase
 
 import com.chernyshev.bankingapp.base.OperationResult
-import com.chernyshev.bankingapp.domain.usecase.Balances
+import com.chernyshev.bankingapp.domain.entity.Balances
 import com.chernyshev.bankingapp.domain.usecase.UserBalanceUseCase
 import kotlinx.coroutines.delay
 

@@ -9,7 +9,7 @@ import com.chernyshev.bankingapp.base.BaseFragment
 import com.chernyshev.bankingapp.R
 import com.chernyshev.bankingapp.base.viewBinding
 import com.chernyshev.bankingapp.databinding.FragmentLandingBinding
-import com.chernyshev.bankingapp.domain.usecase.Balances
+import com.chernyshev.bankingapp.domain.entity.Balances
 import com.chernyshev.bankingapp.utils.extensions.showToast
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,6 +24,10 @@ class LandingFragment : BaseFragment(R.layout.fragment_landing) {
         viewModel.sendEvent(Event.OpenedPage)
     }
 
+    override fun initClickListeners() = with(binding) {
+        transactions.setOnClickListener { viewModel.sendEvent(Event.ClickedTransactions) }
+    }
+
     override fun initObservers() {
         viewModel.subscribeToCommand(viewLifecycleOwner) { command ->
             when (command) {
@@ -32,7 +36,7 @@ class LandingFragment : BaseFragment(R.layout.fragment_landing) {
                         false
                     )
                 )
-                is Command.SetBalance -> setBalance(command.balances)
+                is Command.SetBalance -> setBalances(command.balances)
                 is Command.ShowError -> showToast(
                     command.errorMessage ?: getString(R.string.unknown_error)
                 )
@@ -40,20 +44,16 @@ class LandingFragment : BaseFragment(R.layout.fragment_landing) {
         }
 
         viewModel.subscribeToStateUpdates(viewLifecycleOwner) {
-            displayBalanceLoading(it.isLoadingBalance)
+            displayBalancesLoading(it.isLoadingBalance)
         }
     }
 
-    override fun initClickListeners() = with(binding) {
-        transactions.setOnClickListener { viewModel.sendEvent(Event.ClickedTransactions) }
-    }
-
-    private fun setBalance(balances: Balances) = with(binding) {
+    private fun setBalances(balances: Balances) = with(binding) {
         creditBalance.text = getString(R.string.amount_eur, balances.creditBalance)
         debitBalance.text = getString(R.string.amount_eur, balances.debitBalance)
     }
 
-    private fun displayBalanceLoading(isLoading: Boolean) = with(binding) {
+    private fun displayBalancesLoading(isLoading: Boolean) = with(binding) {
         balanceLoading.root.isVisible = isLoading
     }
 }
